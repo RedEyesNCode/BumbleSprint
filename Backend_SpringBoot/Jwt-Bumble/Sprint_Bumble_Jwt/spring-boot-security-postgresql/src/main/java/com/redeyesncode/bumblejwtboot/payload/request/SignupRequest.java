@@ -1,5 +1,6 @@
 package com.redeyesncode.bumblejwtboot.payload.request;
 
+import java.math.BigDecimal;
 import java.util.Set;
 
 import javax.validation.constraints.*;
@@ -13,6 +14,26 @@ public class SignupRequest {
     @Size(max = 50)
     @Email
     private String email;
+
+
+    private String first_name;
+
+    private String last_name;
+
+
+    private int gender_id;
+
+    private String details;
+
+    private String bio;
+
+
+    private int interested_id;
+
+    private BigDecimal Lat_;
+
+    private BigDecimal Long_;
+
     
     private Set<String> role;
     
