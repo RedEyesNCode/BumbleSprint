@@ -52,8 +52,19 @@ public class UserTable {
 
     private String DATE_ME_ID="-1";
 
-
-
-
-
+    public UserTable(String password, String first_name, String last_name, String email, String userName, String number, boolean isVerified, int gender_id, String bio, BigDecimal LAT_, BigDecimal LONG_, int interested_id, String DATE_ME_ID) {
+        this.password = password;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
+        this.userName = userName;
+        this.number = number;
+        this.isVerified = isVerified;
+        this.gender_id = gender_id;
+        this.bio = bio;
+        this.LAT_ = LAT_;
+        this.LONG_ = LONG_;
+        this.interested_id = interested_id;
+        this.DATE_ME_ID = DATE_ME_ID;
+    }
 }

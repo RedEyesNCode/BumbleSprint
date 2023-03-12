@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class UserService {
@@ -20,27 +21,17 @@ public class UserService {
 
     public ResponseEntity<?> registerUser(UserTable userTable) {
         boolean isRegistered = false;
-        List<UserTable> users = userRepo.findAll();
-        for (int i = 0; i < users.size(); i++) {
-            if(users.get(i).getNumber().equals(userTable.getNumber())){
-                isRegistered = true;
+//        List<UserTable> users = userRepo.findAll();
+//        for (int i = 0; i < users.size(); i++) {
+//            if(Objects.equals(users.get(i).getNumber(),userTable.getNumber())){
+//                isRegistered = true;
+//                break;
+//            }
+//        }
+        userRepo.save(userTable);
+        userRepo.flush();
 
-            }
-        }
-
-        if(isRegistered){
-            return ResponseEntity.ok(new StatusCodeModel("fail",200,"User is already registered with same number"));
-
-        }else{
-            userRepo.save(userTable);
-            userRepo.flush();
-
-            return ResponseEntity.ok(new StatusCodeModel("success",200,"User Registered Sucessfully ! "));
-
-
-
-        }
-
+        return ResponseEntity.ok(new StatusCodeModel("success",200,"User Registered Sucessfully ! "));
 
 
     }
