@@ -20,8 +20,8 @@ public class BumblebootApplication {
 	@Bean
 	CommandLineRunner commandLineRunner(UserRepo userRepo, GenderRepo genderRepo) {
 		return args -> {
-			userRepo.save(new UserTable("password","ashutosh","singh","email@address.com","RedEyesNCode","6261319133",false,1,"Bio", BigDecimal.valueOf(2.34),BigDecimal.valueOf(2.34),2,"-1"));
-			userRepo.flush();
+//			userRepo.save(new UserTable("password","ashutosh","singh","email@address.com","RedEyesNCode","6261319133",false,1,"Bio", BigDecimal.valueOf(2.34),BigDecimal.valueOf(2.34),2,"-1"));
+//			userRepo.flush();
 			genderRepo.save(new GenderTable("Male"));
 			genderRepo.save(new GenderTable("Female"));
 				genderRepo.save(new GenderTable("Secret."));

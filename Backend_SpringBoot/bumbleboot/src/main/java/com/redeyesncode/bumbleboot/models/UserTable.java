@@ -16,14 +16,13 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class UserTable {
+public class    UserTable {
 
     @Id
-    @SequenceGenerator(name = "user_merce_sequence", sequenceName = "user_merce_sequence",allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_merce_sequence")
+    @SequenceGenerator(name = "user_bumble_sequence", sequenceName = "user_bumble_sequence",allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_bumble_sequence")
     private Long id;
 
-    @Column(columnDefinition="TEXT")
     private String password;
 
         private String first_name;
@@ -36,23 +35,23 @@ public class UserTable {
     private String number;
 
 
-    private boolean isVerified = false;
+    private boolean isVerified;
 
 
     private int gender_id;
 
     private String bio;
 
-    private BigDecimal LAT_;
+        private String LAT_;
 
-    private BigDecimal LONG_;
+    private String LONG_;
 
 
     private int interested_id;
 
-    private String DATE_ME_ID="-1";
+        private String DATE_ME_ID;
 
-    public UserTable(String password, String first_name, String last_name, String email, String userName, String number, boolean isVerified, int gender_id, String bio, BigDecimal LAT_, BigDecimal LONG_, int interested_id, String DATE_ME_ID) {
+    public UserTable(String password, String first_name, String last_name, String email, String userName, String number, boolean isVerified, int gender_id, String bio, String LAT_, String LONG_, int interested_id, String DATE_ME_ID) {
         this.password = password;
         this.first_name = first_name;
         this.last_name = last_name;

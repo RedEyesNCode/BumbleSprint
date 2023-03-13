@@ -23,7 +23,7 @@ public class UserController {
 
 
     @PostMapping("/register")
-    private ResponseEntity<?> registerUser(UserTable userTable){
+    private ResponseEntity<?> registerUser(@RequestBody UserTable userTable){
 
         return userService.registerUser(userTable);
 

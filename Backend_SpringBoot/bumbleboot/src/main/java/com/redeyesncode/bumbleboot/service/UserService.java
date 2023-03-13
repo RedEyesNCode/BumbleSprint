@@ -2,6 +2,7 @@ package com.redeyesncode.bumbleboot.service;
 
 
 import com.redeyesncode.bumbleboot.models.UserTable;
+import com.redeyesncode.bumbleboot.models.common.CustomStatusCodeModel;
 import com.redeyesncode.bumbleboot.models.common.StatusCodeModel;
 import com.redeyesncode.bumbleboot.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,6 @@ public class UserService {
 //            }
 //        }
         userRepo.save(userTable);
-        userRepo.flush();
 
         return ResponseEntity.ok(new StatusCodeModel("success",200,"User Registered Sucessfully ! "));
 
@@ -39,5 +39,11 @@ public class UserService {
     public ResponseEntity<?> loginUser(HashMap<String, String> hashMap) {
 
         return ResponseEntity.ok(new StatusCodeModel("success",200,"Login Success"));
+    }
+
+    public ResponseEntity<?> getAllUser() {
+
+        return ResponseEntity.ok(new CustomStatusCodeModel("success",200,userRepo.findAll()));
+
     }
 }
